@@ -1,0 +1,42 @@
+<div class="container py-3">
+
+
+
+
+  <div class="container text-center" style="margin: 30px">
+    <h3>Calculadora Concreto</h3>
+  </div>
+
+
+<div class="text-end">
+  <button class="btn btn-primary" routerLink="/nuevo">Nuevo Registro Concreto</button>
+</div>
+
+  <table class="table table-striped table-hover align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID Calculo Concreto</th>
+        <th scope="col">Nombre Obra</th>
+        <th scope="col">Largo</th>
+        <th scope="col">Ancho</th>
+        <th scope="col">Grosor</th>
+        <th scope="col">Calculo Concreto</th>
+        <th scope="col">Fecha Creacion</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(concreto of concreto; track concreto.id){
+      <tr>
+        <td scope="row">{{ concreto.idConcreto }}</td>
+        <td>{{ concreto.nombreObra }}</td>
+        <td>{{ concreto.largo }}</td>
+        <td>{{ concreto.ancho }}</td>
+        <td>{{ concreto.grosor }}</td>
+        <td>{{ concreto.calculoConcreto }}</td>
+        <td>{{ concreto.fechaCreacion | date : "dd/MM/yyyy hh:mm a" }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

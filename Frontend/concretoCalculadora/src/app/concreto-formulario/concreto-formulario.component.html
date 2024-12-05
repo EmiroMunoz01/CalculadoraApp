@@ -1,0 +1,69 @@
+<h2 class="mb-5 text-center">Nuevo Registro Concreto</h2>
+<div class="row row-cols-2 justify-content-center">
+  <form [formGroup]="form" (ngSubmit)="create()">
+    
+    <div class="mb-3">
+      <label for="name">Nombre Obra</label>
+      <input
+        id="nombreObra"
+        name="nombreObra"
+        type="text"
+        class="form-control"
+        formControlName="nombreObra"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="name">Largo en metros</label>
+      <input
+        id="largo"
+        name="largo"
+        type="number"
+        class="form-control"
+        formControlName="largo"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="name">Ancho en metros</label>
+      <input
+        id="ancho"
+        name="ancho"
+        type="number"
+        class="form-control"
+        formControlName="ancho"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="name">Grosor en metros</label>
+      <input
+        id="grosor"
+        name="grosor"
+        type="number"
+        class="form-control"
+        formControlName="grosor"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="name">Concreto necesario expresado en metros cubicos</label>
+      <input
+        id="calculoConcreto"
+        name="calculoConcreto"
+        class="form-control"
+        formControlName="calculoConcreto"
+      />
+    </div>
+
+    <div class="text-end">
+      <button class="btn btn-primary">Crear Registro Concreto</button>
+      <!-- <button class="btn btn-warning"  (click)="calcularConcreto()">
+        Calcular Concreto
+      </button> -->
+      <button type="button" routerLink="/" class="btn btn-danger">
+        Cancelar Registro
+      </button>
+    </div>
+  </form>
+</div>
