@@ -39,6 +39,10 @@ export default class ConcretoFormularioComponent {
 
   create() {
     const concreto = this.form.value;
+
+    concreto.calculoConcreto =
+      concreto.ancho! * concreto.largo! * concreto.grosor!;
+
     this.concretoService.create(concreto).subscribe(() => {
       this.router.navigate(['/']);
     });
