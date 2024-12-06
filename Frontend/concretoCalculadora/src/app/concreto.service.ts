@@ -16,30 +16,30 @@ export class ConcretoService {
     );
   }
 
-  get(id: number) {
+  get(idConcreto: number) {
     return this.http.get<Concreto>(
-      `http://localhost:8080/api-concreto/concreto/${id}`
+      `http://localhost:8080/api-concreto/concreto/${idConcreto}`
     );
   }
 
-  create(concreto: any) {
+  create(concreto: Concreto) {
     return this.http.post<Concreto>(
       'http://localhost:8080/api-concreto/concreto',
       concreto
     );
   }
 
-  update(id: number, concreto: any) {
+  update(idConcreto: number, concreto: Concreto, ) {
     return this.http.put<Concreto>(
-      `http://localhost:8080/api-concreto/concreto/${id}`,
+      `http://localhost:8080/api-concreto/concreto/${idConcreto}`,
       concreto
     );
   }
 
-  delete(id: number, concreto: any) {
+  delete(idConcreto: number) {
     return this.http.delete<void>(
-      `http://localhost:8080/api-concreto/concreto/${id}`,
-      concreto
+      `http://localhost:8080/api-concreto/concreto/${idConcreto}`
+
     );
   }
 }

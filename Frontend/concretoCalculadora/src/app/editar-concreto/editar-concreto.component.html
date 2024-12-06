@@ -1,9 +1,7 @@
-<h2 class="mb-5 text-center">
-  @if (concreto) { Editar }@else{ Nuevo Registro Concreto }
-</h2>
+<h2 class="mb-5 text-center"></h2>
 <div class="row row-cols-2 justify-content-center">
-  @if (form) {
-  <form [formGroup]="form" (ngSubmit)="save()">
+  @if (formularioEditar) {
+  <form [formGroup]="formularioEditar" (ngSubmit)="save()">
     <div class="mb-3">
       <label for="name">Nombre Obra</label>
       <input
@@ -14,8 +12,8 @@
         formControlName="nombreObra"
       />
 
-      @if (form.get('nombreObra')?.hasError('required')) {
-      <p class="invalid-feedback d-block">El nombre es obligatorio</p>
+      @if (formularioEditar.get('nombreObra')?.hasError('required')) {
+      <p class="invalid-feedback d-block">El nombre de obra es obligatorio</p>
 
       }
     </div>
@@ -29,10 +27,10 @@
         class="form-control"
         formControlName="largo"
       />
-      @if (form.get('largo')?.hasError('required')) {
-        <p class="invalid-feedback d-block">El largo es obligatorio</p>
+      @if (formularioEditar.get('largo')?.hasError('required')) {
+      <p class="invalid-feedback d-block">El largo es obligatorio</p>
 
-        }
+      }
     </div>
 
     <div class="mb-3">
@@ -44,10 +42,10 @@
         class="form-control"
         formControlName="ancho"
       />
-      @if (form.get('ancho')?.hasError('required')) {
-        <p class="invalid-feedback d-block">El ancho es obligatorio</p>
+      @if (formularioEditar.get('ancho')?.hasError('required')) {
+      <p class="invalid-feedback d-block">El ancho es obligatorio</p>
 
-        }
+      }
     </div>
 
     <div class="mb-3">
@@ -59,21 +57,27 @@
         class="form-control"
         formControlName="grosor"
       />
-      @if (form.get('grosor')?.hasError('required')) {
-        <p class="invalid-feedback d-block">El grosor es obligatorio</p>
+      @if (formularioEditar.get('grosor')?.hasError('required')) {
+      <p class="invalid-feedback d-block">El grosor es obligatorio</p>
 
-        }
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="name">Calculo de Concreto</label>
+      <input
+        id="calculoConcreto"
+        name="calculoConcreto"
+        class="form-control"
+        formControlName="calculoConcreto"
+        readonly
+      />
     </div>
 
     <div class="text-end">
-      <button class="btn btn-primary">
-        @if (concreto) { Actualizar Datos }@else{ Crear Registro Concreto }
-      </button>
-      <!-- <button class="btn btn-warning"  (click)="calcularConcreto()">
-          Calcular Concreto
-        </button> -->
+      <button class="btn btn-primary">Actualizar Concreto</button>
       <button type="button" routerLink="/" class="btn btn-danger">
-        @if (concreto) { Cancelar Actualizacion }@else{ Cancelar Registro }
+        Cancelar Actualizacion
       </button>
     </div>
   </form>

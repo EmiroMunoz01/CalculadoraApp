@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.calculadora.calculadora.DTO.ConcretoDTO;
 import com.calculadora.calculadora.Modelo.Concreto;
 import com.calculadora.calculadora.Repositorio.ConcretoRepositorio;
 
@@ -27,8 +28,8 @@ public class ConcretoServicio implements IConcreto {
     }
 
     @Override
-    public Concreto guardarConcreto(Concreto concreto) {
-        return this.concretoRepositorio.save(concreto);
+    public Concreto guardarConcreto(ConcretoDTO concretoDTO) {
+        return this.concretoRepositorio.save(concretoDTO);
     }
 
     @Override

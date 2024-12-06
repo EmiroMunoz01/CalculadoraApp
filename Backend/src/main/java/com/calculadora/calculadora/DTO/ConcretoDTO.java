@@ -1,8 +1,9 @@
-package com.calculadora.calculadora.Modelo;
+package com.calculadora.calculadora.DTO;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
+
 @Getter
 @Setter
 

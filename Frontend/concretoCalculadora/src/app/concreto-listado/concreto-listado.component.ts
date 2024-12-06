@@ -18,8 +18,18 @@ export default class ConcretoListadoComponent implements OnInit {
   concreto: Concreto[] = [];
 
   ngOnInit(): void {
-    this.concretoService.list().subscribe(concreto => {
+    this.loadAll();
+  }
+
+  loadAll() {
+    this.concretoService.list().subscribe((concreto) => {
       this.concreto = concreto;
+    });
+  }
+
+  eliminarConcreto(concreto: Concreto) {
+    this.concretoService.delete(concreto.idConcreto).subscribe(() => {
+      this.loadAll();
     });
   }
 }

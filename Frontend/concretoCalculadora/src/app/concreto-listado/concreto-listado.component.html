@@ -22,20 +22,29 @@
         <th></th>
       </tr>
     </thead>
+
     <tbody>
-      @for(concreto of concreto; track concreto) {
+      @for(concretoo of concreto; track concreto) {
       <tr>
-        <td scope="row">{{ concreto.idConcreto }}</td>
-        <td>{{ concreto.nombreObra }}</td>
-        <td>{{ concreto.largo }}</td>
-        <td>{{ concreto.ancho }}</td>
-        <td>{{ concreto.grosor }}</td>
-        <td>{{ concreto.calculoConcreto }}</td>
-        <td>{{ concreto.fechaCreacion | date : "dd/MM/yyyy hh:mm a" }}</td>
+        <td scope="row">{{ concretoo.idConcreto }}</td>
+        <td>{{ concretoo.nombreObra }}</td>
+        <td>{{ concretoo.largo }}</td>
+        <td>{{ concretoo.ancho }}</td>
+        <td>{{ concretoo.grosor }}</td>
+        <td>{{ concretoo.calculoConcreto }}</td>
+        <td>{{ concretoo.fechaCreacion | date : "dd/MM/yyyy hh:mm a" }}</td>
         <td>
-          <div class="btn-group">
-            <button class="btn btn-warning">Editar</button>
-            <button class="btn btn-danger">Eliminar</button>
+          <div class="btn-group text-end">
+
+            <div class="text-end">
+              <button
+                class="btn btn-warning"
+                [routerLink]="[concretoo.idConcreto, 'editarConcreto']"
+              >
+                Editar
+              </button>
+            </div>
+            <button class="btn btn-danger" (click)="eliminarConcreto(concretoo)">Eliminar</button>
           </div>
         </td>
       </tr>
