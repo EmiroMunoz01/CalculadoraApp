@@ -28,8 +28,8 @@ public class ConcretoServicio implements IConcreto {
     }
 
     @Override
-    public Concreto guardarConcreto(ConcretoDTO concretoDTO) {
-        return this.concretoRepositorio.save(concretoDTO);
+    public Concreto guardarConcreto(Concreto concreto) {
+        return this.concretoRepositorio.save(concreto);
     }
 
     @Override
